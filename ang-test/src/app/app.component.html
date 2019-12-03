@@ -1,0 +1,14 @@
+<header-component [(fromParent2)]="title" [someData]="'34234234434'" (childElementSomething)="somethingForResponse($event)"
+                  (childElementSomething2)="somethingForResponse($event)"></header-component>
+
+<div (click)="needClick()"> Click Me</div>
+
+{{title}}
+
+<div *ngIf="parentData">
+  {{parentData.data}} /    {{parentData.textData}}
+</div>
+
+<router-outlet></router-outlet>
+
+

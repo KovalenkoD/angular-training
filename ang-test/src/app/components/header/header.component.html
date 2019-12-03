@@ -1,0 +1,12 @@
+<div (click)="headerCliked()">HEADER</div>
+<div (click)="header2Cliked()">{{name}}</div>
+
+<div>Data From Parent : {{fromParent}}</div>
+<span>{{someJson.surname}}</span>
+
+<div *ngFor="let data of dataArray">
+  {{data.text}}
+  <div *ngIf="data.number == 2">
+    VALUE!!!!
+  </div>
+</div>
