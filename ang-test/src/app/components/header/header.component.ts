@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {BaseComponentService} from "../../services/base.component.service";
 
 @Component({
   selector: 'header-component',
@@ -18,7 +19,7 @@ export class HeaderComponent {
   someJson = {data: "asdas", name: "asddd", surname : "ivanov"};
   dataArray: any[] = [];
 
-  constructor(){
+  constructor(private baseComponentService: BaseComponentService){
     this.dataArray.push({number :1, text: "1 Data"});
     this.dataArray.push({number :2, text: "2 Data"});
     this.dataArray.push({number :3, text: "3 Data"});
@@ -28,8 +29,8 @@ export class HeaderComponent {
 
 
   headerCliked(){
-    this.fromParent2Event.emit("1313123");
-    this.childElementSomething.emit({data: "text2'", textData: "qwewrr"});
+    this.baseComponentService.firstSubject.next("234234234");
+    this.baseComponentService.secondSubject.next("newBeha");
   }
 
   header2Cliked(){
