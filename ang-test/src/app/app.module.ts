@@ -6,20 +6,23 @@ import { AppComponent } from './app.component';
 import {HeaderComponent} from "./components/header/header.component";
 import {BaseComponentService} from "./services/base.component.service";
 import {FooterComponent} from "./components/footer/footer.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HomeComponent} from "./components/home/home.component";
+import {SomePipe} from "./pipes/some.pipe";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    SomePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     BaseComponentService
