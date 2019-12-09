@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {BaseComponentService} from "../../services/base.component.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'header-component',
@@ -7,33 +8,14 @@ import {BaseComponentService} from "../../services/base.component.service";
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  title = 'HEADER !!!';
-  @Input('fromParent2') fromParent;
-  @Input() someData;
+  currentUser: any;
 
-
-  @Output() fromParent2Event: EventEmitter<string> = new EventEmitter();
-  @Output() childElementSomething: EventEmitter<any> = new EventEmitter();
-  @Output() childElementSomething2: EventEmitter<String> = new EventEmitter();
-  name: string = "some param";
-  someJson = {data: "asdas", name: "asddd", surname : "ivanov"};
-  dataArray: any[] = [];
-
-  constructor(private baseComponentService: BaseComponentService){
-    this.dataArray.push({number :1, text: "1 Data"});
-    this.dataArray.push({number :2, text: "2 Data"});
-    this.dataArray.push({number :3, text: "3 Data"});
-    this.dataArray.push({number :4, text: "4 Data"});
+  constructor(private router: Router){
 
   }
 
-
-  headerCliked(){
-    this.baseComponentService.firstSubject.next("234234234");
-    this.baseComponentService.secondSubject.next("newBeha");
-  }
-
-  header2Cliked(){
-    this.childElementSomething2.emit("!!!!!!!!");
+  logOut(){
+  //  this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 }

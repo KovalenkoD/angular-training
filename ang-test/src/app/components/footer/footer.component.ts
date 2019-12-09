@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {BaseComponentService} from "../../services/base.component.service";
 import {Person} from "../../model/person";
 
@@ -7,13 +7,14 @@ import {Person} from "../../model/person";
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit{
   public textFromSubject;
+  @Input() dsfsdfsf: string;
 
   public person:Person;
 
   constructor(private baseComponentService: BaseComponentService){
-    this.person = new Person("Lenin", "Mertv", new Date(), []);
+
     baseComponentService.firstSubject.subscribe(value => {
       this.textFromSubject = value;
     });
@@ -22,6 +23,10 @@ export class FooterComponent {
       console.log(value);
     })
 
+  }
+
+  ngOnInit(): void {
+    this.person = new Person(this.dsfsdfsf, "Mertv", new Date(), []);
   }
 
 }

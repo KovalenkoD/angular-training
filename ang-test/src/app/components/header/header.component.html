@@ -1,12 +1,18 @@
-<div (click)="headerCliked()">HEADER</div>
-<div (click)="header2Cliked()">{{name}}</div>
+<div class="popover-header">
+  <div class="row">
+    <div class="col-md-2">
+      <span class="resmed-brand"></span>
+    </div>
+    <div class="col-md-7" *ngIf="currentUser">
+Some Text
+    </div>
+    <div class="col-md-3" *ngIf="currentUser">
+      <div style="float: right;">
+        <span class="headerTitle">STASH Metrics</span>
+        <button class="btn btn-outline-info" (click)="logOut()">Log Out</button>
+      </div>
 
-<div>Data From Parent : {{fromParent}}</div>
-<span>{{someJson.surname}}</span>
+    </div>
 
-<div *ngFor="let data of dataArray">
-  {{data.text}}
-  <div *ngIf="data.number == 2">
-    VALUE!!!!
   </div>
 </div>

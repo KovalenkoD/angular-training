@@ -1,0 +1,7 @@
+.btn-primary {
+  background-color: orange;
+
+  & > .asda{
+    background-color: red;
+  }
+}
