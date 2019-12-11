@@ -1,0 +1,10 @@
+<div *ngFor="let person of personList">
+<!--
+  <div routerLink="/person-edit/{{person.id}}">
+-->
+  <div (click)="edit(person.id)">
+    <div>{{person.firstName}}</div>
+    <div>{{person.lastName}}</div>
+    <div *ngFor="let email of person.emails">{{email.value}} {{email.primary}}</div>
+  </div>
+</div>

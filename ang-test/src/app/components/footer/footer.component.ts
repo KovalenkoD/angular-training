@@ -26,7 +26,6 @@ export class FooterComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.person = new Person(this.dsfsdfsf, "Mertv", new Date(), []);
   }
 
 }
