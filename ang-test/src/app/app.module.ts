@@ -11,6 +11,8 @@ import {HomeComponent} from "./components/home/home.component";
 import {SomePipe} from "./pipes/some.pipe";
 import {PersonListComponent} from "./components/person-list/person.list.component";
 import {PersonEditComponent} from "./components/person-edit/person.edit.component";
+import {PersonService} from "./services/person.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -26,10 +28,12 @@ import {PersonEditComponent} from "./components/person-edit/person.edit.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
-    BaseComponentService
+    BaseComponentService,
+    PersonService
   ],
   bootstrap: [AppComponent]
 })
